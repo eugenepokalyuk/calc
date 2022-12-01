@@ -1,29 +1,28 @@
 import './App.css';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 
 import 'uikit/dist/css/uikit.css'
 import 'uikit/dist/js/uikit.js'
 
 // import { render } from '@testing-library/react';
 
-class MyComponent extends React.Component {
-    constructor(props) {
-      super(props);
-    }
+// class MyComponent extends React.Component {
+//     constructor(props) {
+//       super(props);
+//     }
 
-    render() {
-      // change code below this line
-      return (
-        <div className='uk-animation-slide-bottom'>
-            <h1>Hi! This is calculator</h1>
+//     render() {
+//       // change code below this line
+//       return (
+//         <div className='uk-animation-slide-bottom'>
+//             <h1>Hi! This is calculator</h1>
             
-            <p className='uk-text'>Very handy and beautiful calculator, the most important thing is that it counts correctly!</p>
-        </div>
-      );
-      // change code above this line
-    }
-  };
+//             <p className='uk-text'>Very handy and beautiful calculator, the most important thing is that it counts correctly!</p>
+//         </div>
+//       );
+//       // change code above this line
+//     }
+//   };
 
 function App() {
   let result = "";
@@ -95,12 +94,12 @@ function App() {
                 "match": eval(result)
             })
             result = eval(result);
-            const results = ReactDOM.createRoot(document.getElementById('results'));
-            results.render(
-                <div>
-                    <MyComponent />
-                </div>
-            );
+            // const results = ReactDOM.createRoot(document.getElementById('results'));
+            // results.render(
+            //     <div>
+            //         <MyComponent />
+            //     </div>
+            // );
             break;
         default:
             console.log("не знаю")
@@ -205,7 +204,12 @@ function App() {
                     </div>
                 </div>
                 <div className='uk-text-left' id="results">
-                        <MyComponent />
+                        {/* <MyComponent /> */}
+                        <div className='uk-animation-slide-bottom'>
+                            <h1>Hi! This is calculator</h1>
+                            
+                            <p className='uk-text'>Very handy and beautiful calculator, the most important thing is that it counts correctly!</p>
+                        </div>
                 </div>
         </div>
     </div>
