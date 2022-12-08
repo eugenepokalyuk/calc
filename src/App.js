@@ -108,8 +108,8 @@ function App() {
   }
 
   return (
-    <div className='uk-container uk-section '>
-        <div className="uk-width-expand@ uk-text-center" data-uk-grid>
+    <div className='uk-container uk-section'>
+        <div className="uk-width-expand@s uk-text-center uk-flex uk-flex-center uk-flex-column">
                 <div className='calc-container uk-padding-remove uk-padding-2xsmall' data-uk-scrollspy="cls:uk-animation-fade">
                     {/* <h1 className='uk-light'>Calc</h1> */}
                     <div className="uk-grid-collapse uk-child-width-expand@s uk-text-center" data-uk-grid>
@@ -121,7 +121,8 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="uk-grid-collapse uk-child-width-expand@s uk-text-center" data-uk-grid>
+                    <div className="uk-grid-collapse uk-child-width-1-4 uk-text-center" data-uk-grid>
+                    {/* <div className="uk-grid-collapse uk-child-width-expand@s uk-text-center" data-uk-grid> */}
                         <div className='calc-button calc-button-modification' onClick={calcValue}>
                             <div className="uk-padding-small">AC</div>
                         </div>
@@ -139,7 +140,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="uk-grid-collapse uk-child-width-expand@s uk-text-center" data-uk-grid>
+                    <div className="uk-grid-collapse uk-child-width-1-4 uk-text-center" data-uk-grid>
                         <div className='calc-button' onClick={calcValue}>
                             <div className="uk-padding-small">7</div>
                         </div>
@@ -154,7 +155,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="uk-grid-collapse uk-child-width-expand@s uk-text-center" data-uk-grid>
+                    <div className="uk-grid-collapse uk-child-width-1-4 uk-text-center" data-uk-grid>
                         <div className='calc-button' onClick={calcValue}>
                             <div className="uk-padding-small">4</div>
                         </div>
@@ -169,7 +170,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="uk-grid-collapse uk-child-width-expand@s uk-text-center" data-uk-grid>
+                    <div className="uk-grid-collapse uk-child-width-1-4 uk-text-center" data-uk-grid>
                         <div className='calc-button' onClick={calcValue}>
                             <div className="uk-padding-small">1</div>
                         </div>
@@ -184,7 +185,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="uk-grid-collapse uk-child-width-expand@s uk-text-center" data-uk-grid>
+                    <div className="uk-grid-collapse uk-child-width-1-4 uk-text-center" data-uk-grid>
                         <div className='calc-button'>
                             <div className="uk-padding-small"></div>
                         </div>
@@ -202,14 +203,13 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <div className='uk-text-left' id="results">
-                        {/* <MyComponent /> */}
+                {/* <div className='uk-text-left' id="results">
                         <div className='uk-animation-slide-bottom'>
                             <h1>Hi! This is calculator</h1>
                             
                             <p className='uk-text'>Very handy and beautiful calculator, the most important thing is that it counts correctly!</p>
                         </div>
-                </div>
+                </div> */}
         </div>
     </div>
   );
