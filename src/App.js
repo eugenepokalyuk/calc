@@ -27,7 +27,8 @@ import 'uikit/dist/js/uikit.js'
 function App() {
   let result = "";
   let arr = [];
-  
+  let operatorArr = ["/","*","-","+",".","="];
+
   const calcValue = (e) => {
     // e.target.className += "";
     switch (e.target.textContent) {
@@ -71,10 +72,14 @@ function App() {
             result = +result
             result = result > 0 ? -result : result-result * 2;
             break;
-        // case "%":
-        //     break;
         case "/":
             result += "/";
+            // for (let i = 0; i < operatorArr.length; i++) {
+            //     const element = result.includes(operatorArr[i])
+            //     if(element !== true) {
+            //         result += "/"
+            //     }
+            // }
             break;
         case "*":
             result += "*";
@@ -94,15 +99,9 @@ function App() {
                 "match": eval(result)
             })
             result = eval(result);
-            // const results = ReactDOM.createRoot(document.getElementById('results'));
-            // results.render(
-            //     <div>
-            //         <MyComponent />
-            //     </div>
-            // );
             break;
         default:
-            console.log("не знаю")
+            console.log("i don't know")
             break;
     }
     document.getElementById("calcDisplay").textContent = result
