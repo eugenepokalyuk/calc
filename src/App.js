@@ -6,8 +6,6 @@ import 'uikit/dist/js/uikit.js'
 
 function App() {
   let result = "";
-  let arr = [];
-  let operatorArr = ["/","*","-","+",".","="];
 
   function checkErr() {
         if(document.getElementById("calcDisplay").textContent === "Too much!") {
@@ -104,7 +102,6 @@ function App() {
         case "=":
             checkErr();
             if(result.length !== 0) {
-                // result = eval(result);
                 result = eval(result).toFixed(2);
             }
             break;
