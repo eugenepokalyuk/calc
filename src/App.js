@@ -7,78 +7,118 @@ import 'uikit/dist/js/uikit.js'
 function App() {
   let result = "";
   let arr = [];
-  
   let operatorArr = ["/","*","-","+",".","="];
+
+  function checkErr() {
+        if(document.getElementById("calcDisplay").textContent === "Too much!") {
+            document.getElementById("calcDisplay").textContent = "";
+            result = ""
+        }
+    }
 
   const calcValue = (e) => {
     switch (e.target.textContent) {
         case "1":
+            checkErr();
             result += "1";
             break;
         case "2":
+            checkErr();
             result += "2";
             break;
         case "3":
+            checkErr();
             result += "3";
             break;
         case "4":
+            checkErr();
             result += "4";
             break;
         case "5":
+            checkErr();
             result += "5";
             break;
         case "6":
+            checkErr();
             result += "6";
             break;
         case "7":
+            checkErr();
             result += "7";
             break;
         case "8":
+            checkErr();
             result += "8";
             break;
         case "9":
+            checkErr();
             result += "9";
             break;
         case "0":
+            checkErr();
             result += "0";
             break;
         case "AC":
+            checkErr();
             result = ""
             break;
         case "C":
+            checkErr();
             result = result.slice(0, -1);
             break;
         case "+\\-":
+            checkErr();
             result = +result
             result = result > 0 ? -result : result-result * 2;
             break;
         case "/":
-            result += "/";
+            checkErr();
+            if(result.length !== 0) {
+                result[result.length-1] === "/" ? result = result : result += "/";
+            }
             break;
         case "*":
-            result += "*";
+            checkErr();
+            if(result.length !== 0) {
+                result[result.length-1] === "*" ? result = result : result += "*";
+            }
             break;
         case "-":
-            result += "-";
+            checkErr();
+            if(result.length !== 0) {
+                result[result.length-1] === "-" ? result = result : result += "-";
+            }
             break;
         case "+":
-            result += "+";
+            checkErr();
+            if(result.length !== 0) {
+                result[result.length-1] === "+" ? result = result : result += "+";
+            }
             break;
         case ",":
-            result += "."
+            checkErr();
+            if(result.length !== 0) {
+                result[result.length-1] === "," ? result = result : result += ",";
+            }
             break;
         case "=":
-            arr.push({
-                "nums": result, 
-                "match": eval(result)
-            })
-            result = eval(result);
+            checkErr();
+            if(result.length !== 0) {
+                // result = eval(result);
+                result = eval(result).toFixed(2);
+            }
             break;
         default:
+            checkErr();
             console.log("i don't know")
             break;
     }
-    document.getElementById("calcDisplay").textContent = result
+
+    if(document.getElementById("calcDisplay").textContent.length >= 9) {
+        document.getElementById("calcDisplay").textContent = "Too much!"
+    } else {
+        document.getElementById("calcDisplay").textContent = result
+    }
   }
 
   return (
