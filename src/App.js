@@ -97,7 +97,7 @@ function App() {
             case ",":
                 checkErr();
                 if (result.length !== 0) {
-                    result[result.length - 1] === "," ? result = result : result += ",";
+                    result[result.length - 1] === "." ? result = result : result += ".";
                 }
                 break;
             case "=":
