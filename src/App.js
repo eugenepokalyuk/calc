@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import Calc from './Calculator';
 
 import 'uikit/dist/css/uikit.css'
 import 'uikit/dist/js/uikit.js'
